@@ -1,108 +1,825 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manuel Villalvazo| Mentoría y Conferencias Internacionales</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; color: #333; scroll-behavior: smooth; }
-        .hero { background: linear-gradient(135deg, #1a3a5f 0%, #2a5298 100%); color: white; padding: 100px 0; }
-        
-        /* AQUÍ SE AJUSTA LA FOTO */
-        .profile-img { 
-            width: 180px; 
-            height: 180px; 
-            object-fit: cover; /* Esto evita que la foto se deforme */
-            border: 5px solid rgba(255,255,255,0.2);
-        }
 
-        .card-service { border: none; transition: transform 0.3s; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .card-service:hover { transform: translateY(-10px); }
-        .btn-primary { background-color: #007bff; border: none; padding: 12px 30px; border-radius: 8px; }
-        .badge-price { background-color: #28a745; font-size: 1.1rem; padding: 8px 15px; }
-        .section-padding { padding: 80px 0; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dr. Manuel Villalvazo</title>
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+
+:root{
+
+    --bg:#030712;
+    --card:#111827;
+    --card2:#0F172A;
+
+    --border:rgba(255,255,255,0.08);
+
+    --white:#FFFFFF;
+    --gray:#CBD5E1;
+    --gray2:#94A3B8;
+
+    --blue:#60A5FA;
+    --blueStrong:#2563EB;
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,0.45);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    min-height:100%;
+
+    font-family:'Inter',sans-serif;
+
+    overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at top left, rgba(37,99,235,0.22), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(96,165,250,0.18), transparent 28%),
+        linear-gradient(180deg,#020617 0%, #0F172A 100%);
+
+    color:var(--white);
+
+    display:flex;
+    justify-content:center;
+}
+
+/* MAIN */
+
+.main-container{
+
+    width:100%;
+    max-width:430px;
+
+    min-height:100dvh;
+
+    padding:18px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+}
+
+/* HERO */
+
+.hero{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:34px;
+
+    padding:
+        34px
+        24px
+        28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(37,99,235,0.35),
+            rgba(15,23,42,0.92)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    box-shadow:var(--shadow);
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle, rgba(96,165,250,0.35), transparent 70%);
+
+    top:-90px;
+    right:-90px;
+}
+
+.hero-top{
+
+    display:flex;
+    align-items:center;
+
+    gap:18px;
+
+    position:relative;
+    z-index:2;
+}
+
+.profile-image{
+
+    width:92px;
+    height:92px;
+
+    border-radius:24px;
+
+    object-fit:cover;
+
+    border:
+        2px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.35);
+}
+
+.hero-text{
+
+    flex:1;
+}
+
+.badge{
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        8px
+        12px;
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    color:#BFDBFE;
+
+    font-size:0.72rem;
+
+    letter-spacing:1px;
+
+    margin-bottom:14px;
+}
+
+.main-title{
+
+    font-size:2.1rem;
+
+    line-height:0.95;
+
+    letter-spacing:-2px;
+
+    font-weight:800;
+
+    margin-bottom:12px;
+}
+
+.hero-description{
+
+    color:rgba(255,255,255,0.78);
+
+    line-height:1.8;
+
+    font-size:0.92rem;
+
+    margin-top:22px;
+
+    position:relative;
+    z-index:2;
+}
+
+/* SECTION */
+
+.section{
+
+    background:
+        rgba(15,23,42,0.78);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.18);
+}
+
+.section-header{
+
+    padding:
+        18px
+        22px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.05);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(37,99,235,0.12),
+            transparent
+        );
+}
+
+.section-title{
+
+    font-size:0.82rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    color:#93C5FD;
+
+    font-weight:700;
+}
+
+.section-content{
+
+    padding:
+        22px;
+}
+
+/* TEXT */
+
+.main-text{
+
+    color:var(--gray);
+
+    line-height:1.9;
+
+    font-size:0.92rem;
+
+    margin-bottom:18px;
+}
+
+/* RESOURCE CARD */
+
+.resource-card{
+
+    background:
+        rgba(255,255,255,0.03);
+
+    border:
+        1px solid rgba(255,255,255,0.05);
+
+    border-radius:22px;
+
+    padding:18px;
+
+    margin-bottom:14px;
+
+    transition:0.25s ease;
+}
+
+.resource-card:last-child{
+
+    margin-bottom:0;
+}
+
+.resource-card:hover{
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(96,165,250,0.06);
+
+    border-color:
+        rgba(96,165,250,0.18);
+}
+
+.resource-card a{
+
+    text-decoration:none;
+
+    color:white;
+}
+
+.resource-title{
+
+    font-size:1rem;
+
+    line-height:1.6;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+}
+
+.resource-description{
+
+    color:var(--gray2);
+
+    font-size:0.88rem;
+
+    line-height:1.8;
+
+    margin-bottom:12px;
+}
+
+.resource-link{
+
+    color:#93C5FD;
+
+    font-size:0.8rem;
+
+    word-break:break-word;
+}
+
+/* BIO */
+
+.bio-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    padding:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(37,99,235,0.18),
+            rgba(255,255,255,0.02)
+        );
+
+    border:
+        1px solid rgba(96,165,250,0.12);
+}
+
+.bio-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:140px;
+    height:140px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle, rgba(96,165,250,0.18), transparent 70%);
+
+    top:-70px;
+    right:-70px;
+}
+
+.bio-card p{
+
+    position:relative;
+    z-index:2;
+
+    color:var(--gray);
+
+    line-height:1.95;
+
+    font-size:0.92rem;
+}
+
+/* LIST */
+
+.info-list{
+
+    list-style:none;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:14px;
+}
+
+.info-list li{
+
+    display:flex;
+    align-items:flex-start;
+
+    gap:14px;
+
+    padding:16px;
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,0.03);
+
+    border:
+        1px solid rgba(255,255,255,0.05);
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+    font-size:0.92rem;
+}
+
+.info-list li i{
+
+    color:#60A5FA;
+
+    margin-top:4px;
+}
+
+/* CONTACT */
+
+.contact-grid{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:14px;
+}
+
+.contact-btn{
+
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+
+    text-decoration:none;
+
+    padding:
+        18px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.02)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.06);
+
+    transition:0.25s ease;
+
+    color:white;
+}
+
+.contact-btn:hover{
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(96,165,250,0.18);
+
+    background:
+        rgba(96,165,250,0.06);
+}
+
+.contact-icon{
+
+    width:52px;
+    height:52px;
+
+    border-radius:18px;
+
+    background:
+        rgba(96,165,250,0.12);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#60A5FA;
+
+    font-size:1.1rem;
+}
+
+.contact-info{
+
+    display:flex;
+    flex-direction:column;
+}
+
+.contact-label{
+
+    font-size:0.72rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    color:rgba(255,255,255,0.45);
+
+    margin-bottom:5px;
+}
+
+.contact-value{
+
+    font-size:0.96rem;
+
+    font-weight:600;
+}
+
+/* FOOTER */
+
+.footer{
+
+    text-align:center;
+
+    padding:
+        8px
+        12px
+        30px;
+}
+
+.footer p{
+
+    color:rgba(255,255,255,0.38);
+
+    line-height:1.8;
+
+    font-size:0.72rem;
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <header class="hero text-center">
-        <div class="container">
-            <img src="https://media.licdn.com/dms/image/v2/C5603AQFxSMTfU1SBKQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1646407752621?e=2147483647&v=beta&t=aWLSoFDFH5SwBpTDxAvZgaVgjZSVqwx249Ir5DOc-Z8" alt="Manuel Villalvazo" class="rounded-circle mb-4 profile-img shadow-lg">
-            
-            <h1 class="display-4 fw-bold">Manuel Villalvazo</h1>
-            <p class="lead fs-3">Medico Jefe de Anestesia con experiencia en México y Suiza</p>
-            <p class="opacity-75">Radicado en el extranjero | Especialista en Carrera Científica Global</p>
-            
-            <div class="mt-5">
-                <a href="#servicios" class="btn btn-light btn-lg px-4 m-2 shadow-sm">Ver Servicios</a>
-                <a href="contact.html" class="btn btn-outline-light btn-lg px-4 m-2">Contactar ahora</a>
-            </div>
-        </div>
-    </header>
+<main class="main-container">
 
-    <section class="container section-padding text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <h2 class="fw-bold mb-4">¿Por qué hago esto?</h2>
-                <p class="fs-5 text-muted">
-                    Mi trayectoria me ha permitido entender los retos de salir al extranjero. Mi misión hoy es guiar a la siguiente generación de médicos e investigadores a alcanzar sus metas internacionales con asesoría ética y accesible.
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-top">
+
+            <img
+                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1778276120/Captura_de_pantalla_2026-05-08_153505_elf62i.jpg"
+                alt="Dr. Manuel Villalvazo"
+                class="profile-image"
+            >
+
+            <div class="hero-text">
+
+                <div class="badge">
+                    <i class="fas fa-globe-europe"></i>
+                    MÉXICO • EUROPA
+                </div>
+
+                <h1 class="main-title">
+                    Dr. Manuel<br>
+                    Villalvazo
+                </h1>
+
+            </div>
+
+        </div>
+
+        <p class="hero-description">
+            Recursos académicos, oportunidades internacionales y orientación basada en experiencia científica y profesional en Europa.
+        </p>
+
+    </section>
+
+    <!-- RECURSOS -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <h2 class="section-title">
+                Recursos académicos
+            </h2>
+
+        </div>
+
+        <div class="section-content">
+
+            <p class="main-text">
+                A continuación, se presentan recursos clave para la búsqueda de financiamiento en instituciones de alto prestigio:
+            </p>
+
+            <div class="resource-card">
+
+                <a href="https://www.daad.mx" target="_blank">
+
+                    <div class="resource-title">
+                        DAAD México: Estudiar en Alemania
+                    </div>
+
+                    <div class="resource-description">
+                        Plataforma oficial para intercambios y becas de posgrado en Alemania.
+                    </div>
+
+                    <div class="resource-link">
+                        https://www.daad.mx
+                    </div>
+
+                </a>
+
+            </div>
+
+            <div class="resource-card">
+
+                <a href="https://www.vivirviajaramar.com" target="_blank">
+
+                    <div class="resource-title">
+                        11 Mejores Becas para Mexicanos
+                    </div>
+
+                    <div class="resource-description">
+                        Recursos y oportunidades para estudiar y desarrollarse profesionalmente en el extranjero.
+                    </div>
+
+                    <div class="resource-link">
+                        https://www.vivirviajaramar.com
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BIO -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <h2 class="section-title">
+                Sobre el Dr. Manuel Villalvazo
+            </h2>
+
+        </div>
+
+        <div class="section-content">
+
+            <div class="bio-card">
+
+                <p>
+                    Científico mexicano con trayectoria profesional en Europa y experiencia en proyectos académicos e internacionales.
+                    Comparte orientación, herramientas y recursos para jóvenes interesados en oportunidades educativas, becas y desarrollo profesional internacional.
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicios" class="bg-light section-padding">
-        <div class="container">
-            <div class="row g-4 justify-content-center">
-                
-                <div class="col-md-5">
-                    <div class="card card-service h-100 p-4">
-                        <div class="card-body">
-                            <span class="badge badge-price mb-3 text-white">Tarifa Social: €20</span>
-                            <h3 class="card-title fw-bold">Asesoría 1-a-1</h3>
-                            <p class="card-text text-muted">Sesión personalizada para planificar tu especialidad o investigación en Europa/Extranjero.</p>
-                            <ul class="list-unstyled mb-4 text-start">
-                                <li>✅ Hoja de ruta académica</li>
-                                <li>✅ Tips de becas y financiamiento</li>
-                                <li>✅ Validación de títulos</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-primary w-100">Me interesa</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-5">
-                    <div class="card card-service h-100 p-4">
-                        <div class="card-body">
-                            <span class="badge bg-secondary mb-3 text-white">Instituciones</span>
-                            <h3 class="card-title fw-bold">Conferencias Online</h3>
-                            <p class="card-text text-muted">Ponencias especializadas para facultades de medicina y hospitales.</p>
-                            <ul class="list-unstyled mb-4 text-start">
-                                <li>🔹 Innovación en Oftalmología</li>
-                                <li>🔹 El futuro de la Anestesiología</li>
-                                <li>🔹 Metodología de investigación</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn-dark w-100">Solicitar para mi Universidad</a>
-                        </div>
-                    </div>
-                </div>
 
             </div>
+
         </div>
+
     </section>
 
-    <footer class="container section-padding text-center">
-        <h2 class="fw-bold mb-3">¿Damos el siguiente paso?</h2>
-        <p class="text-muted fs-5 mb-4">No importa en qué etapa estés, lo importante es empezar.</p>
-        <a href="contact.html" class="btn btn-primary btn-lg px-5 shadow">
-            ¡Hagámoslo realidad!
-        </a>
-        <div class="mt-5 text-muted border-top pt-4">
-            <p>&copy; 2026 Manuel Villalvazo. Desarrollado con visión social.</p>
+    <!-- UTILIDAD -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <h2 class="section-title">
+                ¿Para quién puede ser útil?
+            </h2>
+
         </div>
+
+        <div class="section-content">
+
+            <ul class="info-list">
+
+                <li>
+                    <i class="fas fa-user-graduate"></i>
+                    Jóvenes que no saben qué carrera elegir
+                </li>
+
+                <li>
+                    <i class="fas fa-plane-departure"></i>
+                    Estudiantes que buscan oportunidades en Europa
+                </li>
+
+                <li>
+                    <i class="fas fa-briefcase"></i>
+                    Profesionistas que desean mayor claridad profesional
+                </li>
+
+                <li>
+                    <i class="fas fa-flask"></i>
+                    Personas interesadas en becas y desarrollo académico internacional
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <h2 class="section-title">
+                Contáctame. Yo te digo cómo.
+            </h2>
+
+        </div>
+
+        <div class="section-content">
+
+            <div class="contact-grid">
+
+                <a
+                    href="https://wa.me/351925179992"
+                    class="contact-btn"
+                    target="_blank"
+                >
+
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+
+                    <div class="contact-info">
+
+                        <span class="contact-label">
+                            WhatsApp directo
+                        </span>
+
+                        <span class="contact-value">
+                            Contacto desde Europa
+                        </span>
+
+                    </div>
+
+                </a>
+
+                <a
+                    href="mailto:villazol.pt@gmail.com"
+                    class="contact-btn"
+                >
+
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <div class="contact-info">
+
+                        <span class="contact-label">
+                            Correo electrónico
+                        </span>
+
+                        <span class="contact-value">
+                            villazol.pt@gmail.com
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>
+            Orientación basada en experiencia internacional y trayectoria científica.
+        </p>
+
     </footer>
+
+</main>
 
 </body>
 </html>
