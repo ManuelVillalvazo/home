@@ -1,825 +1,821 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dr. Manuel Villalvazo</title>
-
-<!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- ICONS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<style>
-
-:root{
-
-    --bg:#030712;
-    --card:#111827;
-    --card2:#0F172A;
-
-    --border:rgba(255,255,255,0.08);
-
-    --white:#FFFFFF;
-    --gray:#CBD5E1;
-    --gray2:#94A3B8;
-
-    --blue:#60A5FA;
-    --blueStrong:#2563EB;
-
-    --shadow:
-        0 20px 60px rgba(0,0,0,0.45);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html,
-body{
-
-    width:100%;
-    min-height:100%;
-
-    font-family:'Inter',sans-serif;
-
-    overflow-x:hidden;
-
-    background:
-        radial-gradient(circle at top left, rgba(37,99,235,0.22), transparent 25%),
-        radial-gradient(circle at bottom right, rgba(96,165,250,0.18), transparent 28%),
-        linear-gradient(180deg,#020617 0%, #0F172A 100%);
-
-    color:var(--white);
-
-    display:flex;
-    justify-content:center;
-}
-
-/* MAIN */
-
-.main-container{
-
-    width:100%;
-    max-width:430px;
-
-    min-height:100dvh;
-
-    padding:18px;
-
-    display:flex;
-    flex-direction:column;
-
-    gap:18px;
-}
-
-/* HERO */
-
-.hero{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:34px;
-
-    padding:
-        34px
-        24px
-        28px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(37,99,235,0.35),
-            rgba(15,23,42,0.92)
-        );
-
-    border:
-        1px solid rgba(255,255,255,0.08);
-
-    box-shadow:var(--shadow);
-}
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:220px;
-    height:220px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(circle, rgba(96,165,250,0.35), transparent 70%);
-
-    top:-90px;
-    right:-90px;
-}
-
-.hero-top{
-
-    display:flex;
-    align-items:center;
-
-    gap:18px;
-
-    position:relative;
-    z-index:2;
-}
-
-.profile-image{
-
-    width:92px;
-    height:92px;
-
-    border-radius:24px;
-
-    object-fit:cover;
-
-    border:
-        2px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-        0 12px 25px rgba(0,0,0,0.35);
-}
-
-.hero-text{
-
-    flex:1;
-}
-
-.badge{
-
-    display:inline-flex;
-    align-items:center;
-
-    gap:8px;
-
-    padding:
-        8px
-        12px;
-
-    border-radius:999px;
-
-    background:
-        rgba(255,255,255,0.08);
-
-    border:
-        1px solid rgba(255,255,255,0.08);
-
-    color:#BFDBFE;
-
-    font-size:0.72rem;
-
-    letter-spacing:1px;
-
-    margin-bottom:14px;
-}
-
-.main-title{
-
-    font-size:2.1rem;
-
-    line-height:0.95;
-
-    letter-spacing:-2px;
-
-    font-weight:800;
-
-    margin-bottom:12px;
-}
-
-.hero-description{
-
-    color:rgba(255,255,255,0.78);
-
-    line-height:1.8;
-
-    font-size:0.92rem;
-
-    margin-top:22px;
-
-    position:relative;
-    z-index:2;
-}
-
-/* SECTION */
-
-.section{
-
-    background:
-        rgba(15,23,42,0.78);
-
-    border:
-        1px solid var(--border);
-
-    border-radius:28px;
-
-    overflow:hidden;
-
-    backdrop-filter:blur(18px);
-
-    box-shadow:
-        0 10px 40px rgba(0,0,0,0.18);
-}
-
-.section-header{
-
-    padding:
-        18px
-        22px;
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.05);
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(37,99,235,0.12),
-            transparent
-        );
-}
-
-.section-title{
-
-    font-size:0.82rem;
-
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-
-    color:#93C5FD;
-
-    font-weight:700;
-}
-
-.section-content{
-
-    padding:
-        22px;
-}
-
-/* TEXT */
-
-.main-text{
-
-    color:var(--gray);
-
-    line-height:1.9;
-
-    font-size:0.92rem;
-
-    margin-bottom:18px;
-}
-
-/* RESOURCE CARD */
-
-.resource-card{
-
-    background:
-        rgba(255,255,255,0.03);
-
-    border:
-        1px solid rgba(255,255,255,0.05);
-
-    border-radius:22px;
-
-    padding:18px;
-
-    margin-bottom:14px;
-
-    transition:0.25s ease;
-}
-
-.resource-card:last-child{
-
-    margin-bottom:0;
-}
-
-.resource-card:hover{
-
-    transform:
-        translateY(-3px);
-
-    background:
-        rgba(96,165,250,0.06);
-
-    border-color:
-        rgba(96,165,250,0.18);
-}
-
-.resource-card a{
-
-    text-decoration:none;
-
-    color:white;
-}
-
-.resource-title{
-
-    font-size:1rem;
-
-    line-height:1.6;
-
-    font-weight:700;
-
-    margin-bottom:10px;
-}
-
-.resource-description{
-
-    color:var(--gray2);
-
-    font-size:0.88rem;
-
-    line-height:1.8;
-
-    margin-bottom:12px;
-}
-
-.resource-link{
-
-    color:#93C5FD;
-
-    font-size:0.8rem;
-
-    word-break:break-word;
-}
-
-/* BIO */
-
-.bio-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:24px;
-
-    padding:22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(37,99,235,0.18),
-            rgba(255,255,255,0.02)
-        );
-
-    border:
-        1px solid rgba(96,165,250,0.12);
-}
-
-.bio-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:140px;
-    height:140px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(circle, rgba(96,165,250,0.18), transparent 70%);
-
-    top:-70px;
-    right:-70px;
-}
-
-.bio-card p{
-
-    position:relative;
-    z-index:2;
-
-    color:var(--gray);
-
-    line-height:1.95;
-
-    font-size:0.92rem;
-}
-
-/* LIST */
-
-.info-list{
-
-    list-style:none;
-
-    display:flex;
-    flex-direction:column;
-
-    gap:14px;
-}
-
-.info-list li{
-
-    display:flex;
-    align-items:flex-start;
-
-    gap:14px;
-
-    padding:16px;
-
-    border-radius:20px;
-
-    background:
-        rgba(255,255,255,0.03);
-
-    border:
-        1px solid rgba(255,255,255,0.05);
-
-    color:var(--gray);
-
-    line-height:1.8;
-
-    font-size:0.92rem;
-}
-
-.info-list li i{
-
-    color:#60A5FA;
-
-    margin-top:4px;
-}
-
-/* CONTACT */
-
-.contact-grid{
-
-    display:flex;
-    flex-direction:column;
-
-    gap:14px;
-}
-
-.contact-btn{
-
-    display:flex;
-    align-items:center;
-
-    gap:16px;
-
-    text-decoration:none;
-
-    padding:
-        18px;
-
-    border-radius:22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.04),
-            rgba(255,255,255,0.02)
-        );
-
-    border:
-        1px solid rgba(255,255,255,0.06);
-
-    transition:0.25s ease;
-
-    color:white;
-}
-
-.contact-btn:hover{
-
-    transform:
-        translateY(-3px);
-
-    border-color:
-        rgba(96,165,250,0.18);
-
-    background:
-        rgba(96,165,250,0.06);
-}
-
-.contact-icon{
-
-    width:52px;
-    height:52px;
-
-    border-radius:18px;
-
-    background:
-        rgba(96,165,250,0.12);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    color:#60A5FA;
-
-    font-size:1.1rem;
-}
-
-.contact-info{
-
-    display:flex;
-    flex-direction:column;
-}
-
-.contact-label{
-
-    font-size:0.72rem;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
-
-    color:rgba(255,255,255,0.45);
-
-    margin-bottom:5px;
-}
-
-.contact-value{
-
-    font-size:0.96rem;
-
-    font-weight:600;
-}
-
-/* FOOTER */
-
-.footer{
-
-    text-align:center;
-
-    padding:
-        8px
-        12px
-        30px;
-}
-
-.footer p{
-
-    color:rgba(255,255,255,0.38);
-
-    line-height:1.8;
-
-    font-size:0.72rem;
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Lorem Ipsum Scientist</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+      --bg:#050505;
+      --card:#111111;
+      --text:#ffffff;
+      --muted:#9ca3af;
+      --accent:#3b82f6;
+      --border:rgba(255,255,255,0.08);
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Inter', sans-serif;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    section{
+      padding:120px 8%;
+      position:relative;
+    }
+
+    .container{
+      max-width:1400px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      padding:24px 8%;
+      backdrop-filter:blur(18px);
+      background:rgba(5,5,5,0.45);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav-content{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      font-size:1rem;
+      font-weight:600;
+      letter-spacing:1px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:32px;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      transition:0.3s;
+      font-size:0.95rem;
+    }
+
+    .nav-links a:hover{
+      color:white;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:'';
+      position:absolute;
+      width:600px;
+      height:600px;
+      background:radial-gradient(circle, rgba(59,130,246,0.35), transparent 70%);
+      top:-200px;
+      right:-100px;
+      filter:blur(60px);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      align-items:center;
+      gap:80px;
+      width:100%;
+    }
+
+    .hero-subtitle{
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:3px;
+      margin-bottom:24px;
+      font-size:0.9rem;
+    }
+
+    .hero h1{
+      font-size:clamp(3rem, 8vw, 7rem);
+      line-height:0.95;
+      margin-bottom:32px;
+      font-weight:700;
+    }
+
+    .hero p{
+      color:var(--muted);
+      font-size:1.1rem;
+      line-height:1.8;
+      max-width:650px;
+      margin-bottom:40px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:16px 28px;
+      border-radius:999px;
+      transition:0.3s;
+      font-weight:500;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .btn-primary{
+      background:var(--accent);
+      color:white;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-secondary{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.03);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.08);
+    }
+
+    .hero-image{
+      position:relative;
+    }
+
+    .hero-image img{
+      width:100%;
+      border-radius:32px;
+      object-fit:cover;
+      height:750px;
+      border:1px solid var(--border);
+    }
+
+    /* ABOUT */
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:80px;
+      align-items:center;
+    }
+
+    .section-label{
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:3px;
+      margin-bottom:20px;
+      font-size:0.8rem;
+    }
+
+    .section-title{
+      font-size:3rem;
+      margin-bottom:28px;
+      line-height:1.1;
+    }
+
+    .section-text{
+      color:var(--muted);
+      line-height:1.9;
+      font-size:1rem;
+    }
+
+    .about-image img{
+      width:100%;
+      border-radius:28px;
+      border:1px solid var(--border);
+    }
+
+    /* TALKS */
+
+    .talks-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:28px;
+      margin-top:60px;
+    }
+
+    .talk-card{
+      background:var(--card);
+      border-radius:28px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      transition:0.4s;
+    }
+
+    .talk-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .talk-card img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+    }
+
+    .talk-content{
+      padding:28px;
+    }
+
+    .talk-content h3{
+      margin-bottom:16px;
+      font-size:1.4rem;
+    }
+
+    .talk-content p{
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    /* STATS */
+
+    .stats{
+      background:linear-gradient(to bottom, transparent, rgba(255,255,255,0.02));
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+      margin-top:60px;
+    }
+
+    .stat-box{
+      padding:40px;
+      border-radius:24px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid var(--border);
+    }
+
+    .stat-box h2{
+      font-size:3rem;
+      margin-bottom:10px;
+    }
+
+    .stat-box p{
+      color:var(--muted);
+    }
+
+    /* MEDIA */
+
+    .media-logos{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+      gap:24px;
+      margin-top:60px;
+    }
+
+    .logo-box{
+      height:120px;
+      border-radius:20px;
+      border:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#6b7280;
+      font-size:1.1rem;
+      background:rgba(255,255,255,0.02);
+    }
+
+    /* TIMELINE */
+
+    .timeline{
+      position:relative;
+      margin-top:60px;
+    }
+
+    .timeline::before{
+      content:'';
+      position:absolute;
+      left:50%;
+      top:0;
+      width:1px;
+      height:100%;
+      background:rgba(255,255,255,0.08);
+    }
+
+    .timeline-item{
+      width:50%;
+      padding:40px;
+      position:relative;
+    }
+
+    .timeline-item:nth-child(odd){
+      left:0;
+      text-align:right;
+    }
+
+    .timeline-item:nth-child(even){
+      left:50%;
+    }
+
+    .timeline-content{
+      background:rgba(255,255,255,0.03);
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:32px;
+    }
+
+    .timeline-year{
+      color:var(--accent);
+      margin-bottom:12px;
+      font-size:0.9rem;
+      letter-spacing:2px;
+    }
+
+    .timeline-content p{
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    /* CTA */
+
+    .cta{
+      text-align:center;
+      padding-bottom:160px;
+    }
+
+    .cta h2{
+      font-size:clamp(2.5rem,5vw,5rem);
+      line-height:1;
+      margin-bottom:30px;
+    }
+
+    .cta p{
+      color:var(--muted);
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:40px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:40px 8%;
+      border-top:1px solid rgba(255,255,255,0.05);
+      color:#6b7280;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1000px){
+
+      .hero-grid,
+      .about-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-image img{
+        height:500px;
+      }
+
+      .timeline::before{
+        left:0;
+      }
+
+      .timeline-item{
+        width:100%;
+        left:0 !important;
+        text-align:left !important;
+        padding-left:40px;
+      }
+
+    }
+
+    @media(max-width:700px){
+
+      .nav-links{
+        display:none;
+      }
+
+      section{
+        padding:100px 6%;
+      }
+
+      .hero h1{
+        font-size:3.5rem;
+      }
+
+      .section-title{
+        font-size:2.2rem;
+      }
+
+      .hero-image img{
+        height:420px;
+      }
+
+    }
+
+  </style>
 </head>
-
 <body>
 
-<main class="main-container">
+  <!-- NAV -->
 
-    <!-- HERO -->
+  <nav>
+    <div class="nav-content">
 
-    <section class="hero">
+      <div class="logo">
+        LOREM IPSUM
+      </div>
 
-        <div class="hero-top">
+      <div class="nav-links">
+        <a href="#">About</a>
+        <a href="#">Talks</a>
+        <a href="#">Media</a>
+        <a href="#">Contact</a>
+      </div>
 
-            <img
-                src="https://res.cloudinary.com/dh3cjks1a/image/upload/v1778276120/Captura_de_pantalla_2026-05-08_153505_elf62i.jpg"
-                alt="Dr. Manuel Villalvazo"
-                class="profile-image"
-            >
+    </div>
+  </nav>
 
-            <div class="hero-text">
+  <!-- HERO -->
 
-                <div class="badge">
-                    <i class="fas fa-globe-europe"></i>
-                    MÉXICO • EUROPA
-                </div>
+  <section class="hero">
 
-                <h1 class="main-title">
-                    Dr. Manuel<br>
-                    Villalvazo
-                </h1>
+    <div class="container hero-grid">
 
-            </div>
+      <div>
 
+        <div class="hero-subtitle">
+          Astrophysicist • Researcher • Speaker
         </div>
 
-        <p class="hero-description">
-            Recursos académicos, oportunidades internacionales y orientación basada en experiencia científica y profesional en Europa.
-        </p>
-
-    </section>
-
-    <!-- RECURSOS -->
-
-    <section class="section">
-
-        <div class="section-header">
-
-            <h2 class="section-title">
-                Recursos académicos
-            </h2>
-
-        </div>
-
-        <div class="section-content">
-
-            <p class="main-text">
-                A continuación, se presentan recursos clave para la búsqueda de financiamiento en instituciones de alto prestigio:
-            </p>
-
-            <div class="resource-card">
-
-                <a href="https://www.daad.mx" target="_blank">
-
-                    <div class="resource-title">
-                        DAAD México: Estudiar en Alemania
-                    </div>
-
-                    <div class="resource-description">
-                        Plataforma oficial para intercambios y becas de posgrado en Alemania.
-                    </div>
-
-                    <div class="resource-link">
-                        https://www.daad.mx
-                    </div>
-
-                </a>
-
-            </div>
-
-            <div class="resource-card">
-
-                <a href="https://www.vivirviajaramar.com" target="_blank">
-
-                    <div class="resource-title">
-                        11 Mejores Becas para Mexicanos
-                    </div>
-
-                    <div class="resource-description">
-                        Recursos y oportunidades para estudiar y desarrollarse profesionalmente en el extranjero.
-                    </div>
-
-                    <div class="resource-link">
-                        https://www.vivirviajaramar.com
-                    </div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- BIO -->
-
-    <section class="section">
-
-        <div class="section-header">
-
-            <h2 class="section-title">
-                Sobre el Dr. Manuel Villalvazo
-            </h2>
-
-        </div>
-
-        <div class="section-content">
-
-            <div class="bio-card">
-
-                <p>
-                    Científico mexicano con trayectoria profesional en Europa y experiencia en proyectos académicos e internacionales.
-                    Comparte orientación, herramientas y recursos para jóvenes interesados en oportunidades educativas, becas y desarrollo profesional internacional.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- UTILIDAD -->
-
-    <section class="section">
-
-        <div class="section-header">
-
-            <h2 class="section-title">
-                ¿Para quién puede ser útil?
-            </h2>
-
-        </div>
-
-        <div class="section-content">
-
-            <ul class="info-list">
-
-                <li>
-                    <i class="fas fa-user-graduate"></i>
-                    Jóvenes que no saben qué carrera elegir
-                </li>
-
-                <li>
-                    <i class="fas fa-plane-departure"></i>
-                    Estudiantes que buscan oportunidades en Europa
-                </li>
-
-                <li>
-                    <i class="fas fa-briefcase"></i>
-                    Profesionistas que desean mayor claridad profesional
-                </li>
-
-                <li>
-                    <i class="fas fa-flask"></i>
-                    Personas interesadas en becas y desarrollo académico internacional
-                </li>
-
-            </ul>
-
-        </div>
-
-    </section>
-
-    <!-- CONTACTO -->
-
-    <section class="section">
-
-        <div class="section-header">
-
-            <h2 class="section-title">
-                Contáctame. Yo te digo cómo.
-            </h2>
-
-        </div>
-
-        <div class="section-content">
-
-            <div class="contact-grid">
-
-                <a
-                    href="https://wa.me/351925179992"
-                    class="contact-btn"
-                    target="_blank"
-                >
-
-                    <div class="contact-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-
-                    <div class="contact-info">
-
-                        <span class="contact-label">
-                            WhatsApp directo
-                        </span>
-
-                        <span class="contact-value">
-                            Contacto desde Europa
-                        </span>
-
-                    </div>
-
-                </a>
-
-                <a
-                    href="mailto:villazol.pt@gmail.com"
-                    class="contact-btn"
-                >
-
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-
-                    <div class="contact-info">
-
-                        <span class="contact-label">
-                            Correo electrónico
-                        </span>
-
-                        <span class="contact-value">
-                            villazol.pt@gmail.com
-                        </span>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-
-    <footer class="footer">
+        <h1>
+          Lorem Ipsum Dolor Sit Amet
+        </h1>
 
         <p>
-            Orientación basada en experiencia internacional y trayectoria científica.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
         </p>
 
-    </footer>
+        <div class="hero-buttons">
 
-</main>
+          <a href="#" class="btn btn-primary">
+            Book Conference
+          </a>
+
+          <a href="#" class="btn btn-secondary">
+            Watch Talks
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop" alt="">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section>
+
+    <div class="container about-grid">
+
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="">
+      </div>
+
+      <div>
+
+        <div class="section-label">
+          About
+        </div>
+
+        <h2 class="section-title">
+          Lorem Ipsum Dolor Sit Amet Consectetur
+        </h2>
+
+        <p class="section-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; 
+          Integer at augue vel ligula cursus fermentum.
+          <br><br>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TALKS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-label">
+        Featured Talks
+      </div>
+
+      <h2 class="section-title">
+        Lorem Ipsum Conferences & Keynotes
+      </h2>
+
+      <div class="talks-grid">
+
+        <div class="talk-card">
+
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop" alt="">
+
+          <div class="talk-content">
+
+            <h3>Lorem Ipsum One</h3>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="talk-card">
+
+          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop" alt="">
+
+          <div class="talk-content">
+
+            <h3>Lorem Ipsum Two</h3>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="talk-card">
+
+          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=1200&auto=format&fit=crop" alt="">
+
+          <div class="talk-content">
+
+            <h3>Lorem Ipsum Three</h3>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section class="stats">
+
+    <div class="container">
+
+      <div class="section-label">
+        Global Reach
+      </div>
+
+      <h2 class="section-title">
+        Lorem Ipsum Impact Around The World
+      </h2>
+
+      <div class="stats-grid">
+
+        <div class="stat-box">
+          <h2>150+</h2>
+          <p>Conferences</p>
+        </div>
+
+        <div class="stat-box">
+          <h2>25</h2>
+          <p>Countries</p>
+        </div>
+
+        <div class="stat-box">
+          <h2>3M+</h2>
+          <p>Audience Reach</p>
+        </div>
+
+        <div class="stat-box">
+          <h2>12</h2>
+          <p>Years Research</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MEDIA -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-label">
+        Press & Media
+      </div>
+
+      <h2 class="section-title">
+        Featured In Lorem Ipsum Media
+      </h2>
+
+      <div class="media-logos">
+
+        <div class="logo-box">LOREM</div>
+        <div class="logo-box">IPSUM</div>
+        <div class="logo-box">DOLOR</div>
+        <div class="logo-box">SIT AMET</div>
+        <div class="logo-box">SCIENCE</div>
+        <div class="logo-box">FUTURE</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TIMELINE -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-label">
+        Timeline
+      </div>
+
+      <h2 class="section-title">
+        Lorem Ipsum Career Journey
+      </h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <div class="timeline-content">
+
+            <div class="timeline-year">
+              2014
+            </div>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <div class="timeline-content">
+
+            <div class="timeline-year">
+              2018
+            </div>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <div class="timeline-content">
+
+            <div class="timeline-year">
+              2021
+            </div>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <div class="timeline-content">
+
+            <div class="timeline-year">
+              2026
+            </div>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        Lorem Ipsum Dolor Sit Amet
+      </h2>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+
+      <a href="#" class="btn btn-primary">
+        Contact Now
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div>
+      © 2026 Lorem Ipsum
+    </div>
+
+    <div>
+      Instagram • LinkedIn • YouTube
+    </div>
+
+  </footer>
 
 </body>
 </html>
